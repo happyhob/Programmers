@@ -31,3 +31,7 @@ def solution(n):
     return np.eye(n).tolist()
 
 '''
+# 파이썬 정적 배열 선언 및 초기화
+cols =2
+row = 3
+arr = [[0 for _ in range(cols)] for _ in range(row)]
