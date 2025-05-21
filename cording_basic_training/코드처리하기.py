@@ -19,19 +19,38 @@ def solution(code):
     mode = True
     temp =[]
     for i,c in enumerate(code):
-        if i ==0:
-            temp.append(c)
-            continue
         if c=="1":
             mode = not mode
             continue
         #1
         if mode:
-            #홀수
-            if i%2 !=0 and c!=1:
-                temp.append(c)
-        else:
-            #짝수
             if i%2 ==0 and c!=1:
                 temp.append(c)
-    return ''.join(temp)
+        else:
+            if i%2 !=0 and c!=1:
+                temp.append(c)
+                
+
+    if ''.join(temp) =='':
+        return "EMPTY"
+    else: return ''.join(temp)
+
+'''
+def solution(code):
+    return "".join(code.split("1"))[::2] or "EMPTY"
+'''
+
+'''
+def solution(code):
+    answer = ''
+
+    mode = 0
+    for i in range(len(code)):
+        if code[i] == '1':
+            mode ^= 1
+        else:
+            if i % 2 == mode:
+                answer += code[i]
+
+    return answer if answer else 'EMPTY'
+'''
